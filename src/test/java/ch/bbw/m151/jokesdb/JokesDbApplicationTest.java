@@ -57,6 +57,7 @@ public class JokesDbApplicationTest implements WithAssertions {
                 .hasSize(pageSize);
     }
 
+    //CI Test
     @Test
     void testWebClient() {
         var joke = jokesService.getOneJoke();
