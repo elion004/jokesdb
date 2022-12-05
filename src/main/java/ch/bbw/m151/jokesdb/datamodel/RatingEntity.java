@@ -4,7 +4,6 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,19 +12,20 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "jokes")
-public class JokesEntity {
+@Table(name = "rating")
+public class RatingEntity {
 
     @Id
-    int id;
+    @GeneratedValue
+    private int id;
 
-    @Column(nullable = false)
-    String joke;
+    private int jokeId;
+
+    private int rating;
 
     @CreationTimestamp
     private Date createdOn;
 
     @UpdateTimestamp
     private Date updatedOn;
-
 }
